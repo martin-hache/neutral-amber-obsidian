@@ -1,6 +1,6 @@
 /*
- * Neutral Amber 1.0.0
- * Dark-only Obsidian theme based on a neutral gray and amber palette.
+ * Neutral Amber 1.1.0
+ * Light and dark Obsidian theme based on neutral grays and an amber accent.
  */
 
 .theme-dark {
@@ -134,8 +134,140 @@
   --graph-node-unresolved: #666666;
 }
 
+.theme-light {
+  color-scheme: light;
+
+  /* Neutral foundation: warm-looking contrast without a blue tint. */
+  --color-base-00: #ffffff;
+  --color-base-05: #fafafa;
+  --color-base-10: #f5f5f5;
+  --color-base-20: #ededed;
+  --color-base-25: #e5e5e5;
+  --color-base-30: #d4d4d4;
+  --color-base-35: #c4c4c4;
+  --color-base-40: #a3a3a3;
+  --color-base-50: #737373;
+  --color-base-60: #525252;
+  --color-base-70: #404040;
+  --color-base-100: #171717;
+
+  /* Amber accent: rgb(245 158 11). */
+  --accent-h: 38;
+  --accent-s: 92%;
+  --accent-l: 50%;
+  --color-accent: #f59e0b;
+  --color-accent-1: #d97706;
+  --color-accent-2: #b45309;
+
+  /* Main canvas and elevated surfaces. */
+  --background-primary: #f5f5f5;
+  --background-primary-alt: #ffffff;
+  --background-secondary: #ffffff;
+  --background-secondary-alt: #ededed;
+  --background-modifier-form-field: #ffffff;
+  --background-modifier-message: #ededed;
+  --background-modifier-hover: #ededed;
+  --background-modifier-active-hover: #e5e5e5;
+  --background-modifier-border: #d4d4d4;
+  --background-modifier-border-hover: #a3a3a3;
+  --background-modifier-border-focus: #f59e0b;
+
+  /* App chrome. */
+  --titlebar-background: #f5f5f5;
+  --titlebar-background-focused: #f5f5f5;
+  --ribbon-background: #f5f5f5;
+  --ribbon-background-collapsed: #f5f5f5;
+  --tab-container-background: #f5f5f5;
+  --status-bar-background: #ffffff;
+  --modal-background: #ffffff;
+  --prompt-background: #ffffff;
+  --canvas-background: #f5f5f5;
+
+  /* Text. */
+  --text-normal: #171717;
+  --text-muted: #525252;
+  --text-faint: #737373;
+  --text-on-accent: #171717;
+  --text-on-accent-inverted: #171717;
+  --text-accent: #b45309;
+  --text-accent-hover: #92400e;
+  --text-selection: color-mix(in oklch, #f59e0b 30%, transparent);
+  --text-highlight-bg: color-mix(in oklch, #f59e0b 38%, transparent);
+  --caret-color: #b45309;
+
+  /* Links and controls. */
+  --link-color: #b45309;
+  --link-color-hover: #92400e;
+  --link-unresolved-color: #737373;
+  --link-unresolved-opacity: 0.8;
+  --interactive-normal: #ffffff;
+  --interactive-hover: #ededed;
+  --interactive-accent: #f59e0b;
+  --interactive-accent-hover: #d97706;
+  --interactive-accent-hover-opacity: 1;
+  --checkbox-color: #f59e0b;
+  --checkbox-color-hover: #d97706;
+  --checkbox-border-color: #a3a3a3;
+  --checkbox-border-color-hover: #d97706;
+  --toggle-thumb-color: #ffffff;
+  --slider-track-background: #d4d4d4;
+  --slider-thumb-border-color: #d97706;
+
+  /* Navigation, tabs, and icons. */
+  --nav-item-color: #525252;
+  --nav-item-color-hover: #171717;
+  --nav-item-color-active: #171717;
+  --nav-item-background-hover: #ededed;
+  --nav-item-background-active: color-mix(in oklch, #f59e0b 22%, #ffffff);
+  --nav-indentation-guide-color: #d4d4d4;
+  --tab-text-color: #525252;
+  --tab-text-color-active: #171717;
+  --tab-text-color-focused-active: #171717;
+  --tab-outline-color: #d4d4d4;
+  --icon-color: #525252;
+  --icon-color-hover: #171717;
+  --icon-color-active: #b45309;
+  --divider-color: #d4d4d4;
+  --divider-color-hover: #d97706;
+
+  /* Editor elements. */
+  --blockquote-border-color: #f59e0b;
+  --embed-block-shadow-hover: 0 0 0 1px #f59e0b;
+  --hr-color: #d4d4d4;
+  --table-border-color: #d4d4d4;
+  --table-header-background: #ffffff;
+  --table-row-alt-background: #ededed;
+  --tag-color: #92400e;
+  --tag-color-hover: #78350f;
+  --tag-background: color-mix(in oklch, #f59e0b 20%, transparent);
+  --tag-background-hover: color-mix(in oklch, #f59e0b 30%, transparent);
+
+  /* Code stays neutral, with darker amber for readable emphasis. */
+  --code-background: #ffffff;
+  --code-normal: #171717;
+  --code-comment: #737373;
+  --code-function: #b45309;
+  --code-important: #92400e;
+  --code-keyword: #b45309;
+  --code-operator: #525252;
+  --code-property: #404040;
+  --code-punctuation: #525252;
+  --code-string: #404040;
+  --code-tag: #b45309;
+  --code-value: #171717;
+
+  /* Graph view. */
+  --graph-line: #a3a3a3;
+  --graph-node: #d97706;
+  --graph-node-focused: #b45309;
+  --graph-node-tag: #525252;
+  --graph-node-attachment: #737373;
+  --graph-node-unresolved: #a3a3a3;
+}
+
 /* Give active tabs a restrained amber marker without changing layout. */
-.theme-dark .workspace-tab-header.is-active {
+.theme-dark .workspace-tab-header.is-active,
+.theme-light .workspace-tab-header.is-active {
   box-shadow: inset 0 -2px 0 #f59e0b;
 }
 
@@ -148,10 +280,21 @@
   background-color: #666666;
 }
 
+.theme-light ::-webkit-scrollbar-thumb {
+  background-color: #c4c4c4;
+}
+
+.theme-light ::-webkit-scrollbar-thumb:hover {
+  background-color: #a3a3a3;
+}
+
 /* Make focused form fields easy to locate. */
 .theme-dark input:focus,
 .theme-dark textarea:focus,
-.theme-dark select:focus {
+.theme-dark select:focus,
+.theme-light input:focus,
+.theme-light textarea:focus,
+.theme-light select:focus {
   border-color: #f59e0b;
 }
 
