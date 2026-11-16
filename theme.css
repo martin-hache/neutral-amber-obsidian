@@ -1,0 +1,157 @@
+/*
+ * Neutral Amber 1.0.0
+ * Dark-only Obsidian theme based on a neutral gray and amber palette.
+ */
+
+.theme-dark {
+  color-scheme: dark;
+
+  /* Neutral foundation: no blue tint. */
+  --color-base-00: #1c1c1c;
+  --color-base-05: #202020;
+  --color-base-10: #222222;
+  --color-base-20: #262626;
+  --color-base-25: #2b2b2b;
+  --color-base-30: #333333;
+  --color-base-35: #3b3b3b;
+  --color-base-40: #4a4a4a;
+  --color-base-50: #666666;
+  --color-base-60: #8a8a8a;
+  --color-base-70: #b8b8b8;
+  --color-base-100: #ededed;
+
+  /* Amber accent: rgb(245 158 11). */
+  --accent-h: 38;
+  --accent-s: 92%;
+  --accent-l: 50%;
+  --color-accent: #f59e0b;
+  --color-accent-1: #f7aa28;
+  --color-accent-2: #f9b94a;
+
+  /* Main canvas and elevated surfaces. */
+  --background-primary: #1c1c1c;
+  --background-primary-alt: #262626;
+  --background-secondary: #262626;
+  --background-secondary-alt: #202020;
+  --background-modifier-form-field: #202020;
+  --background-modifier-message: #303030;
+  --background-modifier-hover: #303030;
+  --background-modifier-active-hover: #383838;
+  --background-modifier-border: #3b3b3b;
+  --background-modifier-border-hover: #4a4a4a;
+  --background-modifier-border-focus: #f59e0b;
+
+  /* App chrome. */
+  --titlebar-background: #1c1c1c;
+  --titlebar-background-focused: #1c1c1c;
+  --ribbon-background: #1c1c1c;
+  --ribbon-background-collapsed: #1c1c1c;
+  --tab-container-background: #1c1c1c;
+  --status-bar-background: #262626;
+  --modal-background: #262626;
+  --prompt-background: #262626;
+  --canvas-background: #1c1c1c;
+
+  /* Text. */
+  --text-normal: #ededed;
+  --text-muted: #b8b8b8;
+  --text-faint: #8a8a8a;
+  --text-on-accent: #1c1c1c;
+  --text-on-accent-inverted: #1c1c1c;
+  --text-accent: #f59e0b;
+  --text-accent-hover: #f9b94a;
+  --text-selection: color-mix(in oklch, #f59e0b 28%, transparent);
+  --text-highlight-bg: color-mix(in oklch, #f59e0b 35%, transparent);
+  --caret-color: #f59e0b;
+
+  /* Links and controls. */
+  --link-color: #f59e0b;
+  --link-color-hover: #f9b94a;
+  --link-unresolved-color: #b8b8b8;
+  --link-unresolved-opacity: 0.75;
+  --interactive-normal: #262626;
+  --interactive-hover: #333333;
+  --interactive-accent: #f59e0b;
+  --interactive-accent-hover: #f7aa28;
+  --interactive-accent-hover-opacity: 1;
+  --checkbox-color: #f59e0b;
+  --checkbox-color-hover: #f7aa28;
+  --checkbox-border-color: #666666;
+  --checkbox-border-color-hover: #f59e0b;
+  --toggle-thumb-color: #ededed;
+  --slider-track-background: #3b3b3b;
+  --slider-thumb-border-color: #f59e0b;
+
+  /* Navigation, tabs, and icons. */
+  --nav-item-color: #b8b8b8;
+  --nav-item-color-hover: #ededed;
+  --nav-item-color-active: #ededed;
+  --nav-item-background-hover: #303030;
+  --nav-item-background-active: color-mix(in oklch, #f59e0b 18%, #262626);
+  --nav-indentation-guide-color: #3b3b3b;
+  --tab-text-color: #b8b8b8;
+  --tab-text-color-active: #ededed;
+  --tab-text-color-focused-active: #ededed;
+  --tab-outline-color: #333333;
+  --icon-color: #b8b8b8;
+  --icon-color-hover: #ededed;
+  --icon-color-active: #f59e0b;
+  --divider-color: #333333;
+  --divider-color-hover: #f59e0b;
+
+  /* Editor elements. */
+  --blockquote-border-color: #f59e0b;
+  --embed-block-shadow-hover: 0 0 0 1px #f59e0b;
+  --hr-color: #3b3b3b;
+  --table-border-color: #3b3b3b;
+  --table-header-background: #262626;
+  --table-row-alt-background: #202020;
+  --tag-color: #f59e0b;
+  --tag-color-hover: #f9b94a;
+  --tag-background: color-mix(in oklch, #f59e0b 14%, transparent);
+  --tag-background-hover: color-mix(in oklch, #f59e0b 22%, transparent);
+
+  /* Code stays neutral, with amber used for emphasis. */
+  --code-background: #262626;
+  --code-normal: #ededed;
+  --code-comment: #8a8a8a;
+  --code-function: #f7aa28;
+  --code-important: #f9b94a;
+  --code-keyword: #f59e0b;
+  --code-operator: #b8b8b8;
+  --code-property: #d6d6d6;
+  --code-punctuation: #b8b8b8;
+  --code-string: #d6d6d6;
+  --code-tag: #f59e0b;
+  --code-value: #ededed;
+
+  /* Graph view. */
+  --graph-line: #4a4a4a;
+  --graph-node: #f59e0b;
+  --graph-node-focused: #f9b94a;
+  --graph-node-tag: #b8b8b8;
+  --graph-node-attachment: #8a8a8a;
+  --graph-node-unresolved: #666666;
+}
+
+/* Give active tabs a restrained amber marker without changing layout. */
+.theme-dark .workspace-tab-header.is-active {
+  box-shadow: inset 0 -2px 0 #f59e0b;
+}
+
+/* Keep scrollbars inside the same neutral palette. */
+.theme-dark ::-webkit-scrollbar-thumb {
+  background-color: #4a4a4a;
+}
+
+.theme-dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #666666;
+}
+
+/* Make focused form fields easy to locate. */
+.theme-dark input:focus,
+.theme-dark textarea:focus,
+.theme-dark select:focus {
+  border-color: #f59e0b;
+}
+
